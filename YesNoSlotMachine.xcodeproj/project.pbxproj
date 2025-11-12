@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5B7E35502EC53375002BE47A /* WatchYesNoSlotMachine Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5B7E35462EC53374002BE47A /* WatchYesNoSlotMachine Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5B7E35562EC5375C002BE47A /* SlotMachineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7E35552EC5375C002BE47A /* SlotMachineViewModel.swift */; };
-		5B7E35582EC53764002BE47A /* SlotMachineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7E35572EC53764002BE47A /* SlotMachineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,13 +37,25 @@
 /* Begin PBXFileReference section */
 		5B7E35342EC53318002BE47A /* YesNoSlotMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YesNoSlotMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7E35462EC53374002BE47A /* WatchYesNoSlotMachine Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchYesNoSlotMachine Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B7E35552EC5375C002BE47A /* SlotMachineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineViewModel.swift; sourceTree = "<group>"; };
-		5B7E35572EC53764002BE47A /* SlotMachineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5B7E355A2EC53E4C002BE47A /* Exceptions for "YesNoSlotMachine" folder in "WatchYesNoSlotMachine Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SlotMachineView.swift,
+				SlotMachineViewModel.swift,
+			);
+			target = 5B7E35452EC53374002BE47A /* WatchYesNoSlotMachine Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5B7E35362EC53318002BE47A /* YesNoSlotMachine */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5B7E355A2EC53E4C002BE47A /* Exceptions for "YesNoSlotMachine" folder in "WatchYesNoSlotMachine Watch App" target */,
+			);
 			path = YesNoSlotMachine;
 			sourceTree = "<group>";
 		};
@@ -80,8 +90,6 @@
 				5B7E35362EC53318002BE47A /* YesNoSlotMachine */,
 				5B7E35472EC53374002BE47A /* WatchYesNoSlotMachine Watch App */,
 				5B7E35352EC53318002BE47A /* Products */,
-				5B7E35552EC5375C002BE47A /* SlotMachineViewModel.swift */,
-				5B7E35572EC53764002BE47A /* SlotMachineView.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,8 +218,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B7E35562EC5375C002BE47A /* SlotMachineViewModel.swift in Sources */,
-				5B7E35582EC53764002BE47A /* SlotMachineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
