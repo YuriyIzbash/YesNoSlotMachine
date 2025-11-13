@@ -43,10 +43,19 @@
 		5B7E355A2EC53E4C002BE47A /* Exceptions for "YesNoSlotMachine" folder in "WatchYesNoSlotMachine Watch App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				Assets.xcassets,
 				SlotMachineView.swift,
 				SlotMachineViewModel.swift,
 			);
 			target = 5B7E35452EC53374002BE47A /* WatchYesNoSlotMachine Watch App */;
+		};
+		5BD7BEB62EC67D7600824A60 /* Exceptions for "WatchYesNoSlotMachine Watch App" folder in "YesNoSlotMachine" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				WatchSlotMachineView.swift,
+				WatchSlotMachineViewModel.swift,
+			);
+			target = 5B7E35332EC53318002BE47A /* YesNoSlotMachine */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -61,6 +70,9 @@
 		};
 		5B7E35472EC53374002BE47A /* WatchYesNoSlotMachine Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5BD7BEB62EC67D7600824A60 /* Exceptions for "WatchYesNoSlotMachine Watch App" folder in "YesNoSlotMachine" target */,
+			);
 			path = "WatchYesNoSlotMachine Watch App";
 			sourceTree = "<group>";
 		};

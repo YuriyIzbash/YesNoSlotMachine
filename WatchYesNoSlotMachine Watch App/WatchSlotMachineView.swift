@@ -1,22 +1,22 @@
 //
-//  SlotMachineView.swift
-//  YesNoSlotMachine
+//  SlotMachineView_watch.swift
+//  WatchYesNoSlotMachine Watch App
 //
-//  Created by yuriy on 12. 11. 25.
+//  Created by yuriy on 11/13/25.
 //
 
 import SwiftUI
 
-struct SlotMachineView: View {
-    @StateObject private var model = SlotMachineViewModel()
+struct WatchSlotMachineView: View {
+    @StateObject private var model = WatchSlotMachineViewModel()
 
     var body: some View {
         ZStack {
-            VStack(spacing: 12) {
+            VStack(spacing: 8) {
                 gridView
                 spinButton
             }
-            .padding()
+            .padding(8)
 
             if model.showResultOverlay, let resultIsYes = model.resultIsYes {
                 resultOverlay(isYes: resultIsYes)
@@ -27,17 +27,17 @@ struct SlotMachineView: View {
     }
 
     private var gridView: some View {
-        VStack(spacing: 6) {
+        VStack(spacing: 4) {
             ForEach(0..<3, id: \.self) { r in
-                HStack(spacing: 6) {
+                HStack(spacing: 4) {
                     ForEach(0..<3, id: \.self) { c in
-                        let item = model.grid.indices.contains(r) && model.grid[r].indices.contains(c) ? model.grid[r][c] : SlotItem(imageName: "", isYes: false)
+                        let item = model.grid.indices.contains(r) && model.grid[r].indices.contains(c) ? model.grid[r][c] : WatchSlotItem(imageName: "", isYes: false)
                         Image(item.imageName.isEmpty ? placeholderName(for: r, c) : item.imageName)
                             .resizable()
                             .scaledToFit()
-                            .frame(maxWidth: 120, maxHeight: 120)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.secondary.opacity(0.3)))
+                            .frame(maxWidth: 40, maxHeight: 40)
+                            .clipShape(RoundedRectangle(cornerRadius: 6))
+                            .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color.secondary.opacity(0.3)))
                     }
                 }
             }
@@ -55,10 +55,10 @@ struct SlotMachineView: View {
             Text(model.isSpinning ? "Spinning…" : "Spin")
                 .font(.headline)
                 .frame(maxWidth: .infinity)
-                .padding()
+                .padding(6)
                 .background(model.isSpinning ? Color.gray.opacity(0.4) : Color.accentColor)
                 .foregroundStyle(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 14))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
         }
         .disabled(model.isSpinning)
     }
@@ -68,25 +68,25 @@ struct SlotMachineView: View {
         let overlayText = isYes ? "Yes" : "No"
         let overlayColor: Color = isYes ? .green : .red
 
-        VStack(spacing: 12) {
+        VStack(spacing: 8) {
             Image(isYes ? (model.yesImageNames.first ?? "yes1") : (model.noImageNames.first ?? "no1"))
                 .resizable()
                 .scaledToFit()
-                .frame(width: 120, height: 120)
+                .frame(width: 44, height: 44)
             Text(overlayText)
-                .font(.largeTitle.weight(.bold))
+                .font(.title2.weight(.bold))
         }
-        .padding(24)
+        .padding(12)
         .background(.ultraThinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
         .overlay(
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .stroke(overlayColor.opacity(0.6), lineWidth: 3)
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .stroke(overlayColor.opacity(0.6), lineWidth: 2)
         )
-        .shadow(radius: 10)
+        .shadow(radius: 6)
     }
 }
 
 #Preview {
-    SlotMachineView()
+    WatchSlotMachineView()
 }

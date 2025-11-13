@@ -1,23 +1,23 @@
 //
-//  SlotMachineViewModel.swift
-//  YesNoSlotMachine
+//  SlotMachineViewModel_watch.swift
+//  WatchYesNoSlotMachine Watch App
 //
-//  Created by yuriy on 12. 11. 25.
+//  Created by yuriy on 11/13/25.
 //
 
 import Foundation
 import Combine
 
-struct SlotItem: Equatable {
+struct WatchSlotItem: Equatable {
     let imageName: String
     let isYes: Bool
 }
 
-final class SlotMachineViewModel: ObservableObject {
+final class WatchSlotMachineViewModel: ObservableObject {
     let yesImageNames: [String]
     let noImageNames: [String]
 
-    @Published var grid: [[SlotItem]] = [] // 3x3
+    @Published var grid: [[WatchSlotItem]] = [] // 3x3
     @Published var isSpinning: Bool = false
     @Published var showResultOverlay: Bool = false
     @Published var resultIsYes: Bool? = nil
@@ -96,15 +96,15 @@ final class SlotMachineViewModel: ObservableObject {
         }
     }
 
-    private func randomItem() -> SlotItem {
+    private func randomItem() -> WatchSlotItem {
         // 50/50 chance of yes/no; adjust if needed
         let isYes = Bool.random()
         if isYes {
             let name = yesImageNames.randomElement() ?? "yes1"
-            return SlotItem(imageName: name, isYes: true)
+            return WatchSlotItem(imageName: name, isYes: true)
         } else {
             let name = noImageNames.randomElement() ?? "no1"
-            return SlotItem(imageName: name, isYes: false)
+            return WatchSlotItem(imageName: name, isYes: false)
         }
     }
 }
